@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class CarBrand extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+    ];
+
+    public function carmodel()
+    {
+        return $this->hasOne(CarModel::class);
+    }
 }

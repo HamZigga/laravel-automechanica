@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class ProductType extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+    ];
+
+    public function product()
+    {
+        return $this->hasOne(Product::class);
+    }
 }
