@@ -14,7 +14,7 @@ class ProductTypeFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Аккумуляторы',
+            'title' => 'Аккумуляторы',
             'description' => 'Автомобильный аккумулятор является важным элементом электрооборудования - наряду с генератором выступает источником тока.'
         ];
     }

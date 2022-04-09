@@ -14,7 +14,8 @@ class CarModelFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Ваз 2109'
+            'title' => 'Ваз 2109',
+            'carbrand_id' => 1,
         ];
     }
 }

@@ -14,7 +14,7 @@ class CarBrandFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'ВАЗ'
+            'title' => 'ВАЗ'
         ];
     }
 }
