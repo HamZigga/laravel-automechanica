@@ -20,10 +20,10 @@ class CreateProductsTable extends Migration
             $table->string('image')->nullable();
             $table->string('brand')->nullable();
             $table->string('description')->nullable();
-            $table->double('price');
+            $table->float('price');
             $table->integer('quantity');
-            $table->bigInteger('type_id')->unsigned();
-            $table->foreign('type_id')->references('id')->on('product_types');
+            $table->bigInteger('producttype_id')->unsigned();
+            $table->foreign('producttype_id')->references('id')->on('product_types');
             $table->timestamps();
         });
     }

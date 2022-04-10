@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductType extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
     protected $fillable = [
@@ -18,4 +19,5 @@ class ProductType extends Model
     {
         return $this->hasOne(Product::class);
     }
+    
 }
