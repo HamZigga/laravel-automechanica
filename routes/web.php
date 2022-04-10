@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/', [ProductTypeController::class, 'index'])->name('main');
+Route::get('/category/{id}', [ProductTypeController::class, 'show'])->name('category.show');
+Route::get('/category', [ProductTypeController::class, 'showAll'])->name('category');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.item');
+Route::get('/personalarea', [UserController::class, 'show'])->middleware('auth')->name('personal.area');
 
 require __DIR__.'/auth.php';
