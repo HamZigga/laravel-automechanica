@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->string('brand')->nullable();
             $table->string('description')->nullable();
             $table->float('price');
-            $table->integer('quantity');
             $table->bigInteger('producttype_id')->unsigned();
             $table->foreign('producttype_id')->references('id')->on('product_types');
             $table->timestamps();

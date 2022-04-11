@@ -15,7 +15,7 @@ class ProductTypeController extends Controller
 
     public function show($id)
     {
-        return view('main', ['producttypes' => ProductType::take(10)->get(), 'products' => Product::where('producttype_id', $id)->paginate(15)]);
+        return view('main', ['producttypes' => ProductType::take(10)->get(), 'products' => Product::where('producttype_id', $id)->paginate(15), 'category'=>ProductType::findOrFail($id)]);
     }
 
     public function showAll()

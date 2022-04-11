@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ProductRequest;
+use App\Http\Requests\PurchaseRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ProductCrudController
+ * Class PurchaseCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ProductCrudController extends CrudController
+class PurchaseCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class ProductCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Product::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/product');
-        CRUD::setEntityNameStrings('product', 'products');
+        CRUD::setModel(\App\Models\Purchase::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/purchase');
+        CRUD::setEntityNameStrings('purchase', 'purchases');
     }
 
     /**
@@ -39,13 +39,11 @@ class ProductCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title');
-        CRUD::column('producttype_id');
-        CRUD::column('subtitle');
-        CRUD::column('image');
-        CRUD::column('brand');
-        CRUD::column('description');
-        CRUD::column('price');
+        CRUD::column('user_id');
+        CRUD::column('product_id');
+        CRUD::column('quantity');
+        CRUD::column('is_active');
+        CRUD::column('is_ready');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -62,16 +60,13 @@ class ProductCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(ProductRequest::class);
+        CRUD::setValidation(PurchaseRequest::class);
 
-        CRUD::field('title');
-        CRUD::field('producttype_id');
-        CRUD::field('subtitle');
-        CRUD::field('image')->type('upload')->upload('true');
-        CRUD::field('brand');
-        CRUD::field('price')->type('number')->attributes(["step" => "any"]);
-        CRUD::field('carmodel');
-        CRUD::field('description')->type('ckeditor');
+        CRUD::field('user_id');
+        CRUD::field('product_id');
+        CRUD::field('quantity');
+        CRUD::field('is_active');
+        CRUD::field('is_ready');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -90,6 +85,4 @@ class ProductCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
-
-    
 }

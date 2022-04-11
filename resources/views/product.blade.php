@@ -15,13 +15,23 @@
                 <p class="h2 mb-2">{{ $product->title }}</p>
                 <p>{{ $product->subtitle }}</p>
                 <p class="lead">{{ $product->brand }}</p>
-                <p>Осталось: {{ $product->quantity }}</p>
                 <p class="h3 mt-3 mb-10">{{ $product->price }} Руб.</p>
-                <form action="" class="product__form">
-                    @csrf
-                    <input type="number" placeholder="Количество" name="quntity" id="quntity" class="product__form-item">
-                    <button class="btn btn-dark">Купить</button>
-                </form>
+                @guest
+                    <p class="h3">Для покупки необходима авторизация</p>
+                @endguest
+                @auth
+                    <form action="{{ route('purchase') }}" class="product__form" method="POST">
+                        @csrf
+                        <input type="text" hidden name="product_id" id="product_id" value="{{ $product->id }}">
+                        <input type="number" placeholder="Количество" name="quantity" id="quantity" class="product__form-item">
+                        <button class="btn btn-dark">Купить</button>
+                    </form>
+                @endauth
+                <p>Подходит для:</p>
+                @foreach($product->carmodel as $carmodel)
+                <span class="badge badge-Secondary">{{ $carmodel->title }}</span>
+                @endforeach
+                
             </div>
         </div>
         <div>{!! $product->description ?? '' !!}</div>

@@ -17,8 +17,7 @@ class Product extends Model
         'image',
         'brand',
         'description',
-        'price',
-        'quantity',  
+        'price',  
     ];
 
     public function setImageAttribute($value)
@@ -35,11 +34,6 @@ class Product extends Model
     public function producttype()
     {
         return $this->belongsTo(ProductType::class);
-    }
-
-    public function busket()
-    {
-        return $this->belongsToMany(Busket::class);
     }
 
     public function carmodel()

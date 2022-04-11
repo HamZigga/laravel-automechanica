@@ -467,6 +467,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.75rem;
 }.-ml-px{
   margin-left: -1px;
+}.mt-10{
+  margin-top: 2.5rem;
 }.mb-4{
   margin-bottom: 1rem;
 }.mt-6{
@@ -859,6 +861,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }a {
     text-decoration: none;
     color: inherit;
+}input {
+    border-radius: 5px;
 }a:hover {
     text-decoration: none;
     color: inherit;
@@ -962,6 +966,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 10px;
     border-radius: 5px;
     font-size: 24px;
+}.statement__button {
+    margin: 20px;
+    padding: 5px 20px;
+    border: 3px #212529 solid;
+    border-radius: 5px;
+    color: #212529;
+    background-color: #fff;
+    font-size: 30px;
+    transition: .2s ease-in-out;
+}.statement__button:hover {
+    color: #fff;
+    background-color: #212529;
 }.footer {
     margin-top: 40px;
     background-color: #FFFFFF;

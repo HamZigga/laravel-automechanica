@@ -1,4 +1,4 @@
-<footer>
+<footer style="margin-top:40px">
     <div class="footer__upper">
         <div class="footer__left">
             <p>Контакты:</p>

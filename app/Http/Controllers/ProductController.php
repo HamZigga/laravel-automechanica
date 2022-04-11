@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CarModel;
 use App\Models\Product;
 use Illuminate\Http\Request;
 

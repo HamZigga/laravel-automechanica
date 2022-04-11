@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\BasketRequest;
+use App\Http\Requests\StatementRequest;
+use App\Models\Statement;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class BasketCrudController
+ * Class StatementCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class BasketCrudController extends CrudController
+class StatementCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +27,9 @@ class BasketCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Basket::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/basket');
-        CRUD::setEntityNameStrings('basket', 'baskets');
+        CRUD::setModel(\App\Models\Statement::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/statement');
+        CRUD::setEntityNameStrings('statement', 'statements');
     }
 
     /**
@@ -38,8 +39,15 @@ class BasketCrudController extends CrudController
      * @return void
      */
     protected function setupListOperation()
-    {
+    {   
+        CRUD::column('id');
         CRUD::column('user_id');
+        CRUD::column('summ');
+        CRUD::column('name');
+        CRUD::column('surname');
+        CRUD::column('phone');
+        CRUD::column('email');
+        CRUD::column('purchase');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -56,9 +64,14 @@ class BasketCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BasketRequest::class);
+        CRUD::setValidation(StatementRequest::class);
 
         CRUD::field('user_id');
+        CRUD::field('summ');
+        CRUD::field('name');
+        CRUD::field('surname');
+        CRUD::field('phone');
+        CRUD::field('email');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -76,5 +89,26 @@ class BasketCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    protected function setupShowOperation()
+    {
+        // by default the Show operation will try to show all columns in the db table,
+        // but we can easily take over, and have full control of what columns are shown,
+        // by changing this config for the Show operation 
+        $this->crud->set('show.setFromDb', false);
+        CRUD::column('id');
+        CRUD::column('user_id');
+        CRUD::column('summ');
+        CRUD::column('name');
+        CRUD::column('surname');
+        CRUD::column('phone');
+        CRUD::column('email');
+        $statement = Statement::findOrFail($this->crud->getCurrentEntry()->id);
+        foreach($statement->purchase as $purchase){
+            CRUD::column(strval($purchase->product->id).", ".strval($purchase->product->title).", ".strval($purchase->quantity)." шт");
+            
+        }
+
     }
 }

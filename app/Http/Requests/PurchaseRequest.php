@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BasketRequest extends FormRequest
+class PurchaseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class BasketRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'quantity' => 'required|numeric|gt:0'
         ];
     }
 
@@ -49,7 +49,9 @@ class BasketRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'quantity.required' => 'Необходимо ввести количество',
+            'quantity.numeric' => 'Необходимо ввести корректное количество',
+            'quantity.gt' => 'Необходимо ввести корректное количество',
         ];
     }
 }
