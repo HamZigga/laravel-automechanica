@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('subtitle')->nullable();
             $table->string('image')->nullable();
             $table->string('brand')->nullable();
-            $table->string('description')->nullable();
+            $table->longtext('description')->nullable();
             $table->float('price');
             $table->bigInteger('producttype_id')->unsigned();
             $table->foreign('producttype_id')->references('id')->on('product_types');

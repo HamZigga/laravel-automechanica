@@ -3,7 +3,7 @@
         <ul class="nav flex-column">
         @foreach ($producttypes as $producttype)
             <li class="nav-item aside__item">
-                <a href="{{ route('category.show', $producttype->id) }}" class="nav-link active">{{ $producttype->title }}</a>
+                <a href="{{ route('category.show', $producttype->id) }}" class="nav-link active" style="font-size: 24px">{{ $producttype->title }}</a>
             </li>
         @endforeach
     </ul>
