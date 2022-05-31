@@ -12,6 +12,9 @@
             <a href="{{ route('category') }}" class="nav__item-link">Категории</a>
         </li>
         <li class="nav__item">
+            <a href="{{ route('product.search') }}" class="nav__item-link">Поиск</a>
+        </li>
+        <li class="nav__item">
             <a href="{{ route('cart') }}" class="nav__item-link">Корзина</a>
         </li>
     </nav>

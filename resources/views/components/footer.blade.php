@@ -1,5 +1,5 @@
-<footer style="margin-top:40px">
-    <div class="footer__upper">
+<footer class="footer" style="margin-top:40px">
+    <div class="container footer__upper">
         <div class="footer__left">
             <p>Контакты:</p>
             <p>8(987)654-32-11</p>
@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="footer__lower">
+    <div class="container footer__lower">
         <p>Все права защищены 2022</p>
     </div>
 </footer>

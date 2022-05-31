@@ -31,7 +31,7 @@ return [
     // The string below will be passed through the url() helper.
     // - default: '' (project root)
     // - alternative: 'admin' (the admin's dashboard)
-    'home_link' => '',
+    'home_link' => 'admin',
 
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
@@ -106,10 +106,10 @@ return [
     // change background color with bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan, bg-white
 
     // Developer or company name. Shown in footer.
-    'developer_name' => 'Cristian Tabacitu',
+    'developer_name' => 'Glazyrin Evgeniy I-18-1',
 
     // Developer website. Link in footer. Type false if you want to hide it.
-    'developer_link' => 'http://tabacitu.ro',
+    'developer_link' => 'https://github.com/HamZigga/laravel-automechanica',
 
     // Show powered by Laravel Backpack in the footer? true/false
     'show_powered_by' => true,

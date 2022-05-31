@@ -29,7 +29,7 @@
                 @endauth
                 <p>Подходит для:</p>
                 @foreach($product->carmodel as $carmodel)
-                <span class="badge badge-Secondary">{{ $carmodel->title }}</span>
+                <span class="badge badge-Secondary">{{ $carmodel->carbrand->title }} {{ $carmodel->title }}</span>
                 @endforeach
                 
             </div>
