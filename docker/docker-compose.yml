@@ -1,0 +1,33 @@
+version: '3'
+services:
+    fpm:
+        build: ./fpm
+        tty: true
+        working_dir: /var/www/automechanica
+        volumes:
+            - ../.:/var/www/automechanica:cached
+            - ./fpm/config/php.ini-local:/usr/local/etc/php/php.ini
+        environment:
+            PHP_IDE_CONFIG: "serverName=mecha"
+    nginx:
+        image: nginx:stable-alpine
+        working_dir: /var/www/automechanica
+        ports:
+            - "80:80"
+        volumes:
+            - ../.:/var/www/automechanica:cached
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:delegated
+
+    mysql:
+        platform: linux/x86_64
+        image: mysql:8.0
+        volumes:
+            - mysql_data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=automechanica
+            - MYSQL_PASSWORD=secret
+        ports:
+            - "3306:3306"
+volumes:
+    mysql_data:
