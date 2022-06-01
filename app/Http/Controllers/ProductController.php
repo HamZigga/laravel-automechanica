@@ -20,16 +20,17 @@ class ProductController extends Controller
     }
 
     public function searchResult(Request $request){
+        $model = new CarModel();
         if(!empty($request->searchInput)){
             $result = Product::where([
                 ['producttype_id', $request->producttype],
                 ['title', 'LIKE', $request->searchInput]
             ])->whereHas('carmodel', function($query) use ($request){
-                $query->where('id', $request->carmodel);
+                $query->where('car_models.id', $request->carmodel);
             })->get();
         } else {
-            $result = Product::where('producttype_id', $request->producttype)->whereHas('carmodel', function($query) use ($request){
-                $query->where('id', $request->carmodel);
+            $result = Product::where('producttype_id', $request->producttype)->whereHas('carmodel', function($query) use ($request, $model){
+                $query->where('car_models.id', $request->carmodel);
             })->get();
         }
         

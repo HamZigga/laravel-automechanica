@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="row">
-                    @if (isset($products) && $products[0])
+                    @if (isset($products) && isset($products[0]))
                         <p class="mt-10">Найденые товары:</p>
                         @foreach ($products as $key => $product)
                             @include('components.product-card')
