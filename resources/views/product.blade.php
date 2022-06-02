@@ -24,7 +24,7 @@
                         @csrf
                         <input type="text" hidden name="product_id" id="product_id" value="{{ $product->id }}">
                         <input type="number" placeholder="Количество" name="quantity" id="quantity" class="product__form-item">
-                        <button class="btn btn-dark">Купить</button>
+                        <button class="btn btn-dark">В корзину</button>
                     </form>
                 @endauth
                 <p>Подходит для:</p>

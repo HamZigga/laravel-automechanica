@@ -20,7 +20,6 @@ class ProductController extends Controller
     }
 
     public function searchResult(Request $request){
-        $model = new CarModel();
         if(!empty($request->searchInput)){
             $result = Product::where([
                 ['producttype_id', $request->producttype],

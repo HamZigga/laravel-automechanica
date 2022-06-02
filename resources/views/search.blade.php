@@ -14,20 +14,29 @@
                         @csrf
                         <p>Фильтры поиска</p>
                         <label for="searchInput">Введите название товара</label>
-                        <input type="text" name="searchInput" id="searchInput" placeholder="Название товара (необязательное поле)">
+                        <input type="text" name="searchInput" id="searchInput"
+                            placeholder="Название товара (необязательное поле)">
+                        <div>
+                            <input type="checkbox" id="producttypeIsActive" name="producttypeIsActive">
+                            <label for="producttypeIsActive">Поиск по категории</label>
+                        </div>
                         <p>Выбор категории</p>
                         <select size="1" name="producttype">
                             <option disabled>Выберите категорию</option>
-                            @foreach($producttypes as $key => $producttype)
+                            @foreach ($producttypes as $key => $producttype)
                                 <option value="{{ $producttype->id }}">{{ $producttype->title }}</option>
                             @endforeach
                         </select>
-
+                        <div>
+                            <input type="checkbox" id="carmodelIsActive" name="carmodelIsActive">
+                            <label for="carmodelIsActive">Поиск по марке автомобиля</label>
+                        </div>
                         <p>Выбор марки автомобиля</p>
                         <select size="1" name="carmodel">
                             <option disabled>Выберите марку авто</option>
-                            @foreach($carmodels as $key => $carmodel)
-                                <option value="{{ $carmodel->id }}"> {{ $carmodel->carbrand->title." ".$carmodel->title }}</option>
+                            @foreach ($carmodels as $key => $carmodel)
+                                <option value="{{ $carmodel->id }}">
+                                    {{ $carmodel->carbrand->title . ' ' . $carmodel->title }}</option>
                             @endforeach
                         </select>
                         <button class="btn btn-secondary">Найти</button>
