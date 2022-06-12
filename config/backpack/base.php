@@ -31,7 +31,7 @@ return [
     // The string below will be passed through the url() helper.
     // - default: '' (project root)
     // - alternative: 'admin' (the admin's dashboard)
-    'home_link' => 'admin',
+    'home_link' => '',
 
     // Content of the HTML meta robots tag to prevent indexing and link following
     'meta_robots_content' => 'noindex, nofollow',
@@ -106,10 +106,10 @@ return [
     // change background color with bg-dark, bg-primary, bg-secondary, bg-danger, bg-warning, bg-success, bg-info, bg-blue, bg-light-blue, bg-indigo, bg-purple, bg-pink, bg-red, bg-orange, bg-yellow, bg-green, bg-teal, bg-cyan, bg-white
 
     // Developer or company name. Shown in footer.
-    'developer_name' => 'Glazyrin Evgeniy I-18-1',
+    'developer_name' => 'Evgeniy Glazyrin',
 
     // Developer website. Link in footer. Type false if you want to hide it.
-    'developer_link' => 'https://github.com/HamZigga/laravel-automechanica',
+    'developer_link' => 'http://f0643551.xsph.ru/',
 
     // Show powered by Laravel Backpack in the footer? true/false
     'show_powered_by' => true,
@@ -164,7 +164,7 @@ return [
     | By default the registration is open only on localhost.
     */
 
-    'registration_open' => env('BACKPACK_REGISTRATION_OPEN', env('APP_ENV') === 'local'),
+    'registration_open' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -192,7 +192,7 @@ return [
     // Set this to false if you would like to use your own AuthController and PasswordController
     // (you then need to setup your auth routes manually in your routes.php file)
     // Warning: if you disable this, the password recovery routes (below) will be disabled too!
-    'setup_auth_routes' => true,
+    'setup_auth_routes' => false,
 
     // Set this to false if you would like to skip adding the dashboard routes
     // (you then need to overwrite the login route on your AuthController)
@@ -248,7 +248,7 @@ return [
     ],
 
     // Alias for that middleware
-    'middleware_key' => 'admin',
+    'middleware_key' => 'is_admin',
     // Note: It's recommended to use the backpack_middleware() helper everywhere, which pulls this key for you.
 
     // Username column for authentication
@@ -259,7 +259,7 @@ return [
 
     // The guard that protects the Backpack admin panel.
     // If null, the config.auth.defaults.guard value will be used.
-    'guard' => 'backpack',
+    'guard' => null,
 
     // The password reset configuration for Backpack.
     // If null, the config.auth.defaults.passwords value will be used.

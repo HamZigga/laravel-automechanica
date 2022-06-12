@@ -26,7 +26,9 @@
 <body>
     @include('components.header')
     @include('components.error-messages')
-    @yield('content')
+    <div class="d-flex justify-content-center">
+        @yield('content')
+    </div>
     @include('components.footer')
 </body>
 

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Scada&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inder&display=swap);
 
 /*
 ! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
@@ -469,8 +469,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: -1px;
 }.mt-10{
   margin-top: 2.5rem;
-}.mb-4{
-  margin-bottom: 1rem;
 }.mt-6{
   margin-top: 1.5rem;
 }.mr-auto{
@@ -481,6 +479,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0px;
 }.mt-3{
   margin-top: 0.75rem;
+}.mb-4{
+  margin-bottom: 1rem;
 }.mb-10{
   margin-bottom: 2.5rem;
 }.mt-2{
@@ -861,27 +861,34 @@ Ensure the default browser behavior of the `hidden` attribute.
 }a {
     text-decoration: none;
     color: inherit;
+}.container {
+    max-width: 1350px;
 }input {
     border-radius: 5px;
+}header {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }a:hover {
     text-decoration: none;
     color: inherit;
 }body {
     font-size: 24px;
-}.header {
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Scada', sans-serif;
-    height: 100px;
-    width: 100%;
-    padding: 10px 0;
-    margin-bottom: 40px;
-    background: #4C83A8;
-    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
-}.header__left {
-    display: flex;
-    align-items: center;
-}.logo__img {
+    background-color: #FCFCFC;
+    color: #000;
+    font-family: 'Inder', sans-serif;
+}.header__social {
+    height: 15px;
+    margin-left: 20px;
+}.header__upper {
+    height: 45px;
+    font-size: 16px;
+    border-bottom: 1px solid #000000;
+}.header__upper-controls {
+    margin-right: 120px;
+}.header__upper-link {
+    margin-right: 35px;
+}.header__upper-link:hover {
+    text-decoration: underline;
+}.header__lower {}.logo__img {
     -o-object-fit: cover;
        object-fit: cover;
     height: 75px;
@@ -902,19 +909,19 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: block;
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    padding: 5px 20px;
-    font-size: 30px;
+    padding: 20px 20px;
+    font-size: 26px;
 }.nav__item::after {
     display: block;
     content: '';
-    border-bottom: solid 4px #fff;
+    border-bottom: solid 4px #000;
     border-radius: 15px;
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
 }.nav__item-link {
-    color: #fff;
+    color: #000;
 }.nav__item-link:hover {
-    color: #fff;
+    color: #000;
 }.nav__item:hover::after {
     transform: scaleX(1);
 }.header__right {
@@ -926,11 +933,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 24px;
     border: 3px solid rgba(255, 255, 255, 0);
     transition: .1s ease-in-out;
-    color: #fff;
+    color: #000;
 }.header__right-element:hover {
     border: 3px solid #fff;
     border-radius: 3px;
-    color: #fff;
+    color: #000;
 }.btn-dark {
     font-size: 30px;
 }.aside__block {}.aside__item {
@@ -939,7 +946,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 30px;
 }.aside__item:hover {
     background-color: #212529;
-    color: #fff;
+    color: #000;
 }.aside__item:last-child {
     border-bottom: none;
 }.cards__item-img {
@@ -953,10 +960,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     background-color: #212529;
     height: 150px;
     margin: 15px;
-    color: #fff;
+    color: #000;
     transition: ease-in-out .2s;
 }.category__item:hover {
-    background-color: #fff;
+    background-color: #000;
     border: #212529 4px solid;
     color: #212529;
 }.product__form {
@@ -981,7 +988,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.footer {
     margin-top: 40px;
     background-color: #FFFFFF;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px -4px 7px rgba(0, 0, 0, 0.25);
 }.footer__upper {
     display: flex;
     justify-content: space-around;

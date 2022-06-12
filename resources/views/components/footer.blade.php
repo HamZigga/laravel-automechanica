@@ -8,7 +8,10 @@
         <div class="footer__right">
             <p>Наши соцсети:</p>
             <div class="footer__social">
-                <a href="#"><img src="{{ asset('storage/images/baseimg/image10.png') }}" alt="social"></a>
+                <a href="#"><img src="{{ asset('storage/images/baseimg/vk.png') }}" alt="social"></a>
+                <a href="#"><img src="{{ asset('storage/images/baseimg/twitter.png') }}" alt="social"></a>
+                <a href="#"><img src="{{ asset('storage/images/baseimg/zen.png') }}" alt="social"></a>
+                <a href="#"><img src="{{ asset('storage/images/baseimg/gp.png') }}" alt="social"></a>
             </div>
         </div>
     </div>

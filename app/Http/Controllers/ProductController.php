@@ -28,7 +28,7 @@ class ProductController extends Controller
                 $query->where('car_models.id', $request->carmodel);
             })->get();
         } else {
-            $result = Product::where('producttype_id', $request->producttype)->whereHas('carmodel', function($query) use ($request, $model){
+            $result = Product::where('producttype_id', $request->producttype)->whereHas('carmodel', function($query) use ($request){
                 $query->where('car_models.id', $request->carmodel);
             })->get();
         }

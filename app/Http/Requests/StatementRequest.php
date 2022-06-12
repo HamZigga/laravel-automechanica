@@ -25,7 +25,9 @@ class StatementRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|max:255',
+            'surname' => 'required|max:255',
+            'phone' => 'required|digits:11'
         ];
     }
 
@@ -49,7 +51,12 @@ class StatementRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Необходимо ввести имя',
+            'surname.required' => 'Необходимо ввести фамилию',
+            'phone.required' => 'Необходимо ввести номер телефона',
+            'name.max' => 'Поле имя превышает :max символов',
+            'surname.max' => 'Поле фамилии превышает :max символов',
+            'phone.digits' => 'Поле поле Телефона должно состоять из 11 цифр',
         ];
     }
 }
