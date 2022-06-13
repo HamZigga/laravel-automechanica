@@ -25,7 +25,9 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required|max:255',
+            'price' => 'required|max:999999',
+            'image' => 'image'
         ];
     }
 
@@ -49,7 +51,11 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'title.required' => 'Необходимо ввести название',
+            'title.max' => 'Поле названия превышает :max символов',
+            'price.required' => 'Необходимо ввести цену',
+            'price.max' => 'Поле цены превышает :max символов',
+            'image.image' => 'Приложенный файл не является изображением',
         ];
     }
 }

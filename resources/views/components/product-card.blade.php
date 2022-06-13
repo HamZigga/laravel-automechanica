@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="" style="padding: 0 20px">
     <a href="{{ route('product.item', $product->id) }}">
         <div class="card cards__item mb-4">
             @if ($product->image)

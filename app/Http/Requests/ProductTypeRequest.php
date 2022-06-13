@@ -25,7 +25,8 @@ class ProductTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required|max:255',
+            'image' => 'image'
         ];
     }
 
@@ -49,7 +50,9 @@ class ProductTypeRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'title.required' => 'Необходимо ввести название',
+            'title.max' => 'Поле названия превышает :max символов',
+            'description.image' => 'Приложенный файл не является изображением',
         ];
     }
 }

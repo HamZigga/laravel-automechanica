@@ -23,7 +23,7 @@ class ProductController extends Controller
         if(!empty($request->searchInput)){
             $result = Product::where([
                 ['producttype_id', $request->producttype],
-                ['title', 'LIKE', $request->searchInput]
+                ['title', 'LIKE', "%{$request->searchInput}%"]
             ])->whereHas('carmodel', function($query) use ($request){
                 $query->where('car_models.id', $request->carmodel);
             })->get();

@@ -25,7 +25,7 @@ class CarBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required|max:255'
         ];
     }
 
@@ -49,7 +49,8 @@ class CarBrandRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'title.required' => 'Необходимо ввести название',
+            'title.max' => 'Поле названия превышает :max символов',
         ];
     }
 }

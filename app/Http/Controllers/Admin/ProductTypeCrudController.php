@@ -28,7 +28,7 @@ class ProductTypeCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\ProductType::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/product-type');
-        CRUD::setEntityNameStrings('product type', 'product types');
+        CRUD::setEntityNameStrings('категория', 'категории');
     }
 
     /**
@@ -39,8 +39,8 @@ class ProductTypeCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title');
-        CRUD::column('description');
+        CRUD::column('title')->label('Название');
+        CRUD::column('description')->label('Описание');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -60,7 +60,7 @@ class ProductTypeCrudController extends CrudController
         CRUD::setValidation(ProductTypeRequest::class);
 
         CRUD::field('title');
-        CRUD::field('description');
+        CRUD::field('description')->type('upload')->upload('true');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

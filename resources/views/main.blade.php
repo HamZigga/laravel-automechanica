@@ -3,6 +3,7 @@
 @section('title', 'Главная страница')
 
 @section('content')
+    @if(Route::currentRouteName() == 'main')
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -42,10 +43,11 @@
             <span class="sr-only">Next</span>
         </button>
     </div>
+    @endif
     <div class="container d-flex justify-content-center">
         <div class="row">
             <section class="products">
-                <h3 class="h3 d-flex justify-content-center">Каталог</h3>
+                <h3 class="h3 d-flex justify-content-center" style="padding-top: 35px; padding-bottom: 20px; font-size: 32px">Каталог</h3>
                 <div class="row d-flex justify-content-around">
                     @if (!$products[0])
                         <p class="mt-10">Список товаров пуст</p>
@@ -60,7 +62,7 @@
             
         </div>
     </div>
-
+    @if(Route::currentRouteName() == 'main')
     <div class="container products d-flex justify-content-center flex-column advantages">
         <p class="d-flex justify-content-center advantages__title">Наши преимущества</p>
         <ul class="advantages__list">
@@ -69,4 +71,5 @@
             <li>Мы не просим предоплату - оплата при получении</li>
         </ul>
     </div>
+    @endif
 @endsection

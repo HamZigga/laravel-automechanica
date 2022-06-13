@@ -29,7 +29,7 @@ class StatementCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Statement::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/statement');
-        CRUD::setEntityNameStrings('statement', 'statements');
+        CRUD::setEntityNameStrings('заказ', 'заказы');
     }
 
     /**
@@ -42,10 +42,10 @@ class StatementCrudController extends CrudController
     {   
         CRUD::column('id');
         CRUD::column('user_id');
-        CRUD::column('summ');
-        CRUD::column('name');
-        CRUD::column('surname');
-        CRUD::column('phone');
+        CRUD::column('summ')->label('Сумма заказа');
+        CRUD::column('name')->label('Имя заказчика');
+        CRUD::column('surname')->label('Фамилия заказчика');
+        CRUD::column('phone')->label('Телефон');
         CRUD::column('email');
         CRUD::column('purchase');
 
@@ -99,14 +99,14 @@ class StatementCrudController extends CrudController
         $this->crud->set('show.setFromDb', false);
         CRUD::column('id');
         CRUD::column('user_id');
-        CRUD::column('summ');
-        CRUD::column('name');
-        CRUD::column('surname');
-        CRUD::column('phone');
+        CRUD::column('summ')->label('Сумма заказа');
+        CRUD::column('name')->label('Имя заказчика');
+        CRUD::column('surname')->label('Фамилия заказчика');
+        CRUD::column('phone')->label('Телефон');
         CRUD::column('email');
         $statement = Statement::findOrFail($this->crud->getCurrentEntry()->id);
         foreach($statement->purchase as $purchase){
-            CRUD::column(strval($purchase->product->id).", ".strval($purchase->product->title).", ".strval($purchase->quantity)." шт");
+            CRUD::column("ID: ".strval($purchase->product->id).", Наименование: ".strval($purchase->product->title).", ".strval($purchase->quantity)." шт");
             
         }
 

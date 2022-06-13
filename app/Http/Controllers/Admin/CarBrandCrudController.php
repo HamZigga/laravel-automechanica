@@ -39,7 +39,7 @@ class CarBrandCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('title');
+        CRUD::column('title')->label('Название');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
