@@ -36,7 +36,7 @@
         <div class="row align-items-center header__lower">
             <div class="col">
                 <a class="" href="{{ route('main') }}">
-                    <p>TechAuto.shop</p>
+                    <p style="font-size: 35px">TechAuto.shop</p>
                 </a>
             </div>
             <div class="col d-flex justify-content-end">

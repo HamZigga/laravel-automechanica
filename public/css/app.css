@@ -698,8 +698,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-}.pt-3{
-  padding-top: 0.75rem;
 }.pt-6{
   padding-top: 1.5rem;
 }.pt-2{
@@ -714,6 +712,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0px;
 }.pl-1{
   padding-left: 0.25rem;
+}.pt-3{
+  padding-top: 0.75rem;
 }.pb-3{
   padding-bottom: 0.75rem;
 }.pt-4{
@@ -940,7 +940,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     color: #000;
 }.btn-dark {
     font-size: 30px;
-}.aside__block {}.aside__item {
+}.products {
+    max-width: 1000px;
+}.aside__item {
     border-bottom: #212529 2px solid;
     transition: .2s ease-in-out;
     font-size: 30px;
@@ -949,10 +951,33 @@ Ensure the default browser behavior of the `hidden` attribute.
     color: #000;
 }.aside__item:last-child {
     border-bottom: none;
+}.cards_container {
+    display: flex;
+    padding: 0 15px;
+}.cards__item {
+    max-width: 350px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
 }.cards__item-img {
-    height: 200px;
+    height: 240px;
     -o-object-fit: cover;
        object-fit: cover;
+}h5 {
+    display: inline-block;
+    padding: 10px;
+    background: #B9121B;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}.full-screen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}.cards__item-title {
+    font-size: 26px;
+    font-weight: bold;
+}.cards__item-brand {
+    font-size: 22px;
 }.category__item {
     display: flex;
     justify-content: center;
@@ -962,6 +987,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin: 15px;
     color: #000;
     transition: ease-in-out .2s;
+    font-size: 16px;
 }.category__item:hover {
     background-color: #000;
     border: #212529 4px solid;
@@ -1000,6 +1026,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.footer__lower {
     display: flex;
     justify-content: center;
+}.slider__item {
+    height: 86vh;
+    font-size: 26px;
+}.slider__text {
+    font-size: 45px;
+}.slider__img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}.advantages {
+    margin-top: 50px;
+    font-size: 30px;
+}.advantages__list {
+    padding-top: 20px;
+    list-style-type: disc;
 }.hover\:border-gray-300:hover{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));

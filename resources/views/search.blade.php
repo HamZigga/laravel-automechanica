@@ -5,9 +5,6 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="aside__block">
-                @include('components.sidebar')
-            </div>
             <section class="col-md-8 col-lg-8 pt-3 px-4 products">
                 <div class="row">
                     <form action="{{ route('product.search.result') }}" method="POST" class="form">
