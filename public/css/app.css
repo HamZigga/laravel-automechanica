@@ -485,6 +485,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.75rem;
 }.mb-1{
   margin-bottom: 0.25rem;
+}.mt-5{
+  margin-top: 1.25rem;
 }.mb-10{
   margin-bottom: 2.5rem;
 }.mt-2{
@@ -515,8 +517,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 3rem;
 }.-mt-px{
   margin-top: -1px;
-}.mt-5{
-  margin-top: 1.25rem;
 }.block{
   display: block;
 }.inline{
@@ -541,10 +541,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 1rem;
 }.h-6{
   height: 1.5rem;
-}.h-20{
-  height: 5rem;
 }.h-8{
   height: 2rem;
+}.h-20{
+  height: 5rem;
 }.min-h-screen{
   min-height: 100vh;
 }.w-5{
@@ -559,10 +559,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }.w-6{
   width: 1.5rem;
-}.w-20{
-  width: 5rem;
 }.w-8{
   width: 2rem;
+}.w-20{
+  width: 5rem;
 }.max-w-7xl{
   max-width: 80rem;
 }.max-w-6xl{
@@ -1053,6 +1053,97 @@ Ensure the default browser behavior of the `hidden` attribute.
 .form-control[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}.burger {
+    display: none;
+}@media only screen and (max-width: 900px) {
+    .burger {
+        display: block;
+    }
+    .pc {
+        display: none;
+    }
+}.animated-icon1,
+.animated-icon2,
+.animated-icon3 {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}.animated-icon1 span,
+.animated-icon2 span,
+.animated-icon3 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}.animated-icon1 span {
+    background: #000;
+}.animated-icon2 span {
+    background: #e3f2fd;
+}.animated-icon3 span {
+    background: #f3e5f5;
+}.animated-icon1 span:nth-child(1) {
+    top: 0px;
+}.animated-icon1 span:nth-child(2) {
+    top: 10px;
+}.animated-icon1 span:nth-child(3) {
+    top: 20px;
+}.animated-icon1.open span:nth-child(1) {
+    top: 11px;
+    transform: rotate(135deg);
+}.animated-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}.animated-icon1.open span:nth-child(3) {
+    top: 11px;
+    transform: rotate(-135deg);
+}/* Icon 3*/.animated-icon2 span:nth-child(1) {
+    top: 0px;
+}.animated-icon2 span:nth-child(2),
+.animated-icon2 span:nth-child(3) {
+    top: 10px;
+}.animated-icon2 span:nth-child(4) {
+    top: 20px;
+}.animated-icon2.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}.animated-icon2.open span:nth-child(2) {
+    transform: rotate(45deg);
+}.animated-icon2.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}.animated-icon2.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}/* Icon 4 */.animated-icon3 span:nth-child(1) {
+    top: 0px;
+    transform-origin: left center;
+}.animated-icon3 span:nth-child(2) {
+    top: 10px;
+    transform-origin: left center;
+}.animated-icon3 span:nth-child(3) {
+    top: 20px;
+    transform-origin: left center;
+}.animated-icon3.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 8px;
+}.animated-icon3.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}.animated-icon3.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 21px;
+    left: 8px;
 }.hover\:border-gray-300:hover{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));

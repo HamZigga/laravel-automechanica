@@ -13,6 +13,15 @@ class ProductTypeController extends Controller
         return view('main', ['producttypes' => ProductType::take(10)->get(), 'products' => Product::paginate(15)]);
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+    public function contacts()
+    {
+        return view('contacts');
+    }
+
     public function show($id)
     {
         return view('main', ['producttypes' => ProductType::take(7)->get(), 'products' => Product::where('producttype_id', $id)->paginate(15), 'category'=>ProductType::findOrFail($id)]);
