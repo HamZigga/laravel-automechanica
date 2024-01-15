@@ -1,4 +1,5 @@
 version: '3'
+name: mecha
 services:
     fpm:
         build: ./fpm
@@ -7,8 +8,6 @@ services:
         volumes:
             - ../.:/var/www/automechanica:cached
             - ./fpm/config/php.ini-local:/usr/local/etc/php/php.ini
-        environment:
-            PHP_IDE_CONFIG: "serverName=mecha"
     nginx:
         image: nginx:stable-alpine
         working_dir: /var/www/automechanica

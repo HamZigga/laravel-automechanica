@@ -16,6 +16,6 @@
         </div>
     </div>
     <div class="container footer__lower">
-        <p>Все права защищены 2022</p>
+        <p>Все права защищены 2024</p>
     </div>
 </footer>
